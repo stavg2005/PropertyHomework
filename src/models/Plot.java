@@ -29,10 +29,18 @@ public class Plot extends Property {
                 throw new IllegalArgumentException("Unknown type: " + type);
         }
     }
+
+
     @Override
     public String toString() {
-        return "Plot{" +
-                "type=" + type +" "+ super.toString();
+        return UpperCaseFirst(type.name())  +" Plot " +
+                " "+ super.toString();
 
+    }
+
+    private  String UpperCaseFirst(String sentence){
+        sentence= sentence.toLowerCase();
+        sentence = (char)(sentence.charAt(0) -32) + sentence.substring(2);
+        return  sentence;
     }
 }
