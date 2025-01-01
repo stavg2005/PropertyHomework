@@ -2,6 +2,7 @@ package models;
 
 import Data.AdressException;
 
+import java.util.Locale;
 import java.util.Objects;
 
 public abstract class Property
@@ -54,10 +55,12 @@ public abstract class Property
 
     @Override
     public String toString() {
+        String FormatPrice =  String.format(Locale.US,"%,.2f",price);
+
         return
                 "address='" + address + '\'' +
-                ", area=" + area + " meters squered"+
-                ", price=" + price +" ₪";
+                ", area=" + area + " meters squared"+
+                ", price=" + FormatPrice +"₪";
 
     }
 

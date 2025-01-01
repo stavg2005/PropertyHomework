@@ -18,16 +18,12 @@ public class Plot extends Property {
 
     @Override
     public double Taxlt() {
-        switch (type) {
-            case URBAN:
-                return getPrice() * URBAN_TAX_RATE;
-            case AGRICULTURAL:
-                return getPrice() * AGRICULTURAL_TAX_RATE;
-            case INDUSTRIAL:
-                return getPrice() * INDUSTRIAL_TAX_RATE;
-            default:
-                throw new IllegalArgumentException("Unknown type: " + type);
-        }
+        return switch (type) {
+            case URBAN -> getPrice() * URBAN_TAX_RATE;
+            case AGRICULTURAL -> getPrice() * AGRICULTURAL_TAX_RATE;
+            case INDUSTRIAL -> getPrice() * INDUSTRIAL_TAX_RATE;
+            default -> throw new IllegalArgumentException("Unknown type: " + type);
+        };
     }
 
 
@@ -40,7 +36,7 @@ public class Plot extends Property {
 
     private  String UpperCaseFirst(String sentence){
         sentence= sentence.toLowerCase();
-        sentence = (char)(sentence.charAt(0) -32) + sentence.substring(2);
+        sentence = (char)(sentence.charAt(0) -32) + sentence.substring(1);
         return  sentence;
     }
 }
