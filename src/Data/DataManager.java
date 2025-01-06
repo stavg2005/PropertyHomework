@@ -42,6 +42,7 @@ public class DataManager {
         properties.add(new Office("Petah Tikva, Sgula Industrial Area", 250, 3000000));
 
 
+
         return properties;
     }
 }

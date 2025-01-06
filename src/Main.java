@@ -112,7 +112,7 @@ public class Main {
             return address.substring(0, index);
         } else {
 
-            throw new AdressException("Address Not in Correct Format");
+            throw new AdressException("Address Not in Correct Format: " + address);
         }
     }
 

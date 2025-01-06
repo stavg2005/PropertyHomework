@@ -30,7 +30,7 @@ public abstract class Property
         if(!address.isEmpty() &&hasAtLeastTwoWords(address))
             this.address = address;
         else
-            throw new AdressException("Incorrect Format For Address");
+            throw new AdressException("Incorrect Format For Address: " + address);
     }
 
     public float getArea() {

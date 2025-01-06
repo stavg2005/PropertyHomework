@@ -38,6 +38,7 @@ public class RealEstateManager
         properties.add(p);
     }
 
+    //function that returns all the property's  that are cheaper or equal to a giving price
     public  ArrayList<Property> Budget(double price){
         ArrayList<Property> b = new ArrayList<>();
         for(Property p :properties){
