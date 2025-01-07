@@ -66,7 +66,7 @@ public abstract class Property
         if (sentence == null || sentence.isEmpty()) {
             return false;
         }
-
+        sentence = sentence.trim();
         String[] words = sentence.split(",");
 
         return words.length >= 2;
