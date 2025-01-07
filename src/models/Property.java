@@ -27,10 +27,8 @@ public abstract class Property
     }
     public void setAddress(String address)
     {
-        if(!address.isEmpty() &&hasAtLeastTwoWords(address))
+        if(hasAtLeastTwoWords(address))
             this.address = address;
-        else
-            throw new AdressException("Incorrect Format For Address: " + address);
     }
 
     public float getArea() {
@@ -64,12 +62,15 @@ public abstract class Property
 
     }
 
-    private  boolean hasAtLeastTwoWords(String sentence) {
+    private boolean hasAtLeastTwoWords(String sentence) {
+        if (sentence == null || sentence.isEmpty()) {
+            return false;
+        }
 
+        String[] words = sentence.split(",");
 
-        String[] Words = sentence.split(",");
-
-        return  (sentence.indexOf(',') !=-1)&&Words.length>=2;
+        return words.length >= 2;
     }
+
 
 }

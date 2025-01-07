@@ -135,17 +135,13 @@ public class Main {
     private static void countCities() {
         HashSet<String> cities = new HashSet<>();
 
-        for(Property b:realEstateManager.getProperties()){
-            String city= GetCityfromAdress(b.getAddress());
+        for (Property property : realEstateManager.getProperties()) {
+            String city = GetCityfromAdress(property.getAddress());
             cities.add(city);
-
-        }
-        System.out.println("Unique cities:");
-        for (String city : cities) {
-            System.out.println(city);
         }
 
-
+        System.out.println("Unique cities: " + String.join(", ", cities));
         System.out.println("Total number of unique cities: " + cities.size());
     }
+
 }
